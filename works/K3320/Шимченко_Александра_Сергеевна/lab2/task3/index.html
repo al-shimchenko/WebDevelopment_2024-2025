@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Viewer</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <form class="form">
+          <input type="url" placeholder="Ссылка на сайт" required>
+          <input type="number" min="1" placeholder="Время (в секундах)" required>
+          <input type="submit" value="Отправить">
+        </form>
+
+        <p>Список сайтов:</p>
+        <div id="site-list">
+        </div>
+      </div>
+
+      <div class="right-container">
+        <p>Текущий сайт</p>
+        <iframe id="frame"></iframe>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
