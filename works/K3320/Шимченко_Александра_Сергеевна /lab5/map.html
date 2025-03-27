@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная карта изображений</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="main-title">Добро пожаловать в наш двор!</h1>
+    
+    <!-- Карта изображений -->
+    <img src="img.JPG" alt="Интерактивный двор" usemap="#image-map" class="main-image">
+
+    <map name="image-map">
+        <!-- Солнце -->
+        <area shape="circle" coords="300,125,26" href="javascript:void(0)" onclick="changeTitleColor()">
+        <!-- Окно -->
+        <area shape="rect" coords="281,298,434,528" href="javascript:void(0)" onclick="showAlert()">
+        <!-- Колодец -->
+        <area shape="poly" coords="173,653,220,627,329,624,294,653" href="javascript:void(0)" onclick="openWikipedia()">
+        <!-- Ковёр -->
+        <area shape="rect" coords="741,314,888,442" href="javascript:void(0)" onclick="toggleBackgroundColor()">
+        <!-- Будка -->
+        <area shape="poly" coords="549,544,549,451,607,416,658,454,661,544" href="javascript:void(0)" onclick="redirectToForm()">
+    </map>
+
+    <!-- Всплывающее уведомление -->
+    <div id="custom-alert" class="hidden">
+        <p>Привет!!</p>
+        <button onclick="hideAlert()">Закрыть</button>
+    </div>
+
+    <script>
+        let isBackgroundChanged = false;
+        const originalColor = '#fdfcfd';
+
+        function changeTitleColor() {
+            const title = document.getElementById('main-title');
+            title.style.color = title.style.color === 'gold' ? '#333' : 'gold';
+        }
+
+        function showAlert() {
+            document.getElementById('custom-alert').classList.remove('hidden');
+        }
+
+        function hideAlert() {
+            document.getElementById('custom-alert').classList.add('hidden');
+        }
+
+        function openWikipedia() {
+            window.open('https://wikipedia.org', '_blank');
+        }
+
+        function toggleBackgroundColor() {
+            document.body.style.backgroundColor = isBackgroundChanged ? originalColor : '#b2dfdb';
+            isBackgroundChanged = !isBackgroundChanged;
+        }
+
+        function redirectToForm() {
+            window.location.href = 'form.html';
+        }
+    </script>
+</body>
+</html>

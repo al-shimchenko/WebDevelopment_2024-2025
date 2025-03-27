@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная связь</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            color: #00796b;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00796b;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #b2dfdb;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-check-group {
+            margin-bottom: 10px;
+        }
+        .submit-btn {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Форма обратной связи</h2>
+        <form id="feedbackForm" action="feedback.php" method="post" novalidate>
+            <div class="form-group">
+                <label for="firstname">Имя</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Фамилия</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Обратная связь</label>
+                <textarea class="form-control" id="feedback" name="feedback" required></textarea>
+            </div>
+            <div class="form-group">
+                <p>Выберите один из вариантов:</p>
+                <div class="form-check-group">
+                    <input type="radio" class="form-check-input" name="variant" id="var1" value="Вариант 1" required>
+                    <label for="var1" class="form-check-label">Вариант 1</label>
+                </div>
+                <div class="form-check-group">
+                    <input type="radio" class="form-check-input" name="variant" id="var2" value="Вариант 2">
+                    <label for="var2" class="form-check-label">Вариант 2</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <p>Выберите несколько тем:</p>
+                <div class="form-check-group">
+                    <input type="checkbox" class="form-check-input" id="topic1" name="topics[]" value="Тема 1">
+                    <label for="topic1" class="form-check-label">Тема 1</label>
+                </div>
+                <div class="form-check-group">
+                    <input type="checkbox" class="form-check-input" id="topic2" name="topics[]" value="Тема 2">
+                    <label for="topic2" class="form-check-label">Тема 2</label>
+                </div>
+                <div class="form-check-group">
+                    <input type="checkbox" class="form-check-input" id="topic3" name="topics[]" value="Тема 3">
+                    <label for="topic3" class="form-check-label">Тема 3</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
