@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Главная - Весёлые Крабы{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="text-center">
+    <h1>Добро пожаловать в мир весёлых крабов!</h1>
+    <img src="{% static 'main/images/crab-beach.gif' %}" alt="Краб на пляже" class="img-fluid my-4 crab-animation" style="max-height:400px;">
+    <p class="lead">На нашем сайте крабы радуются каждому посетителю!</p>
+</div>
+{% endblock %}
